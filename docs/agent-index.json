@@ -1,0 +1,173 @@
+{
+  "repoName": "Aetheris UI",
+  "repoPurpose": "Planning and documentation repository for a future local-only browser extension that enhances the ChatGPT web UI at https://chatgpt.com/*.",
+  "status": {
+    "lastReviewed": "2026-07-09",
+    "implementationState": "documentation-and-planning-only",
+    "hasRunnableApp": false,
+    "hasPackageManifest": false,
+    "hasExtensionManifest": false,
+    "hasSourceScaffold": false,
+    "hasTests": false,
+    "hasCi": false,
+    "hasReleaseArtifacts": false
+  },
+  "primaryLanguages": [],
+  "frameworks": [
+    {
+      "name": "WXT",
+      "status": "recommended-not-implemented"
+    },
+    {
+      "name": "TypeScript",
+      "status": "recommended-not-implemented"
+    },
+    {
+      "name": "React",
+      "status": "recommended-for-extension-owned-ui-not-implemented"
+    }
+  ],
+  "importantPaths": {
+    "rootIndex": "00_Index.md",
+    "agentInstructions": "AGENTS.md",
+    "readme": "README.md",
+    "docsIndex": "docs/INDEX.md",
+    "researchReport": "DOCUMENTATION/deep-research-report.md",
+    "reportsIndex": "reports/INDEX.md",
+    "handoffsIndex": "handoffs/INDEX.md"
+  },
+  "docsEntryPoints": [
+    "00_Index.md",
+    "AGENTS.md",
+    "README.md",
+    "docs/INDEX.md",
+    "docs/current-state.md",
+    "docs/AGENT-INDEX.md",
+    "docs/SOURCE-MAP.md",
+    "docs/CONNECTIONS.md",
+    "docs/OBSIDIAN.md"
+  ],
+  "sourceAreas": [],
+  "plannedSourceAreas": [
+    "entrypoints/",
+    "src/features/",
+    "src/dom/",
+    "src/storage/",
+    "src/theme/",
+    "src/ui/",
+    "public/"
+  ],
+  "testAreas": [],
+  "plannedTestAreas": [
+    "tests/"
+  ],
+  "commands": {
+    "repoDeclared": [],
+    "safeInspection": [
+      "git status --short --branch",
+      "git ls-files",
+      "Get-ChildItem -Force",
+      "Get-ChildItem -Recurse -File docs, reports, handoffs, DOCUMENTATION"
+    ],
+    "docsValidation": [
+      "Get-Content -Raw docs\\agent-index.json | ConvertFrom-Json",
+      "git diff --check"
+    ],
+    "doNotRunUntilDeclared": [
+      "npm ci",
+      "npm run dev",
+      "npm run build",
+      "npm test",
+      "npm run lint",
+      "npm run typecheck"
+    ]
+  },
+  "reports": {
+    "location": "reports/",
+    "index": "reports/INDEX.md"
+  },
+  "handoffs": {
+    "location": "handoffs/",
+    "index": "handoffs/INDEX.md"
+  },
+  "decisions": {
+    "location": "docs/decisions.md",
+    "note": "Lowercase path remains canonical in this Windows-first repo."
+  },
+  "safetyRules": [
+    "Treat source, manifests, configs, tests, and CI as higher-priority truth than planning docs when they exist.",
+    "Do not invent runnable commands.",
+    "Do not modify runtime or product behavior for documentation-only work.",
+    "Do not commit, push, deploy, publish, tag, or release unless explicitly requested.",
+    "Keep Aetheris UI local-only unless the product direction changes explicitly.",
+    "Do not add telemetry, analytics, cloud sync, remote code, automatic message sending, or account/session manipulation."
+  ],
+  "sensitivePathRules": [
+    "Do not track .obsidian/.",
+    "Do not commit Obsidian Sync state, workspace state, plugin state, browser profile data, generated dependency folders, or build output.",
+    "Do not commit private prompts, private workflow notes, credentials, keys, tokens, account IDs, private URLs, or secrets."
+  ],
+  "obsidianConventions": {
+    "localOnly": true,
+    "trackObsidianFolder": false,
+    "canonicalLinks": "relative Markdown links",
+    "wikiLinks": "private-local-only-not-canonical",
+    "graphHubs": [
+      "00_Index.md",
+      "docs/INDEX.md",
+      "docs/AGENT-INDEX.md",
+      "docs/SOURCE-MAP.md",
+      "docs/CONNECTIONS.md",
+      "docs/ROADMAP.md",
+      "reports/INDEX.md",
+      "handoffs/INDEX.md"
+    ]
+  },
+  "tagTaxonomy": {
+    "global": [
+      "#repo/index",
+      "#repo/architecture",
+      "#repo/development",
+      "#repo/testing",
+      "#repo/security",
+      "#repo/deployment",
+      "#repo/roadmap",
+      "#repo/decision",
+      "#repo/source-map",
+      "#repo/connection-map",
+      "#agent/orientation",
+      "#agent/handoff",
+      "#agent/report",
+      "#obsidian/local",
+      "#obsidian/graph"
+    ],
+    "repoSpecific": [
+      "#aetheris/browser-extension",
+      "#aetheris/chatgpt-ui",
+      "#aetheris/wxt",
+      "#aetheris/mv3",
+      "#aetheris/local-only",
+      "#aetheris/privacy",
+      "#aetheris/theme",
+      "#aetheris/snippets",
+      "#aetheris/dom-contracts",
+      "#aetheris/release"
+    ],
+    "doNotUse": [
+      "#cloud-sync",
+      "#telemetry",
+      "#auto-send",
+      "#official-chatgpt",
+      "#account-automation",
+      "#production-ready"
+    ]
+  },
+  "knownRisks": [
+    "The repository has no runnable app scaffold yet.",
+    "Research recommendations may become stale and must be re-verified before implementation.",
+    "ChatGPT DOM integration is expected to be fragile once source work begins.",
+    "Browser extension policy requirements can change.",
+    "Private local Obsidian state must remain untracked."
+  ],
+  "lastReviewed": "2026-07-09"
+}

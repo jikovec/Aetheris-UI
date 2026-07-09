@@ -1,28 +1,45 @@
 # Aetheris UI Project Memory Index
 
-Last validated: 2026-07-07
+Last validated: 2026-07-09
+
+Tags: #repo/index #agent/orientation #obsidian/graph #aetheris/browser-extension
 
 ## Start Here
 
-- `AGENTS.md` - Codex instructions, read order, and repository truth rules.
-- `docs/current-state.md` - Current checkout state and what is not implemented yet.
-- `docs/decisions.md` - Planning decisions and recommendation status.
-- `docs/commands.md` - Commands currently declared by the repo and safe inspection commands.
-- `docs/testing.md` - Current test status and future validation expectations.
-- `docs/security-model.md` - Intended privacy and security boundaries.
+1. [AGENTS.md](AGENTS.md) - Codex instructions, read order, repository truth rules, and safety boundaries.
+2. [docs/INDEX.md](docs/INDEX.md) - Canonical documentation hub.
+3. [docs/current-state.md](docs/current-state.md) - Current checkout state and what is not implemented yet.
+4. [docs/decisions.md](docs/decisions.md) - Planning decisions and recommendation status.
+5. [docs/commands.md](docs/commands.md) - Commands currently declared by the repo and safe inspection commands.
+6. [docs/testing.md](docs/testing.md) - Current test status and future validation expectations.
+7. [docs/security-model.md](docs/security-model.md) - Intended privacy and security boundaries.
+8. [DOCUMENTATION/deep-research-report.md](DOCUMENTATION/deep-research-report.md) - Product and technical research. Treat as planning input, not proof of implementation.
 
-## Existing Research
+## Main Hubs
 
-- `DOCUMENTATION/deep-research-report.md` - Product and technical research for Aetheris UI. Treat it as planning input, not proof that the implementation exists.
+- [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) - Planned architecture and source boundaries.
+- [docs/DEVELOPMENT.md](docs/DEVELOPMENT.md) - Future development workflow and setup expectations.
+- [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md) - Current deployment status and future release planning.
+- [docs/OBSIDIAN.md](docs/OBSIDIAN.md) - Local-only Obsidian vault usage and graph conventions.
+- [docs/AGENT-INDEX.md](docs/AGENT-INDEX.md) - Human-readable future-agent orientation.
+- [docs/SOURCE-MAP.md](docs/SOURCE-MAP.md) - Current and planned source/test map.
+- [docs/CONNECTIONS.md](docs/CONNECTIONS.md) - Human-readable doc/source/test/report connection map.
+- [docs/ROADMAP.md](docs/ROADMAP.md) - Planned milestones and non-goals.
+- [docs/agent-index.json](docs/agent-index.json) - Machine-readable future-agent index.
 
-## Reports
+## Reports And Handoffs
 
-- `reports/project-memory-validation-2026-07-07.md` - Validation report for the initial memory-first workflow pass.
-- `reports/next-version-local-changes-report.md` - Local documentation release report for the 2026-07-07 initial project-memory release.
+- [reports/INDEX.md](reports/INDEX.md) - Report index.
+- [handoffs/INDEX.md](handoffs/INDEX.md) - Handoff index.
+- [reports/obsidian-agent-indexing-plan.md](reports/obsidian-agent-indexing-plan.md) - Planning report for this indexing system.
+- [reports/obsidian-agent-indexing-implementation-report-2026-07-09.md](reports/obsidian-agent-indexing-implementation-report-2026-07-09.md) - Implementation report for the indexing pass.
+- [reports/obsidian-agent-indexing-verification-report-2026-07-09.md](reports/obsidian-agent-indexing-verification-report-2026-07-09.md) - Post-implementation verification and hardening report for the indexing pass.
+- [reports/project-memory-validation-2026-07-07.md](reports/project-memory-validation-2026-07-07.md) - Validation report for the initial memory-first workflow pass.
+- [reports/next-version-local-changes-report.md](reports/next-version-local-changes-report.md) - Local documentation release report for the 2026-07-07 initial project-memory release.
 
 ## Releases
 
-- `docs/releases/2026-07-07-local-documentation-release.md` - Dated release note for the initial documentation and project-memory baseline.
+- [docs/releases/2026-07-07-local-documentation-release.md](docs/releases/2026-07-07-local-documentation-release.md) - Dated release note for the initial documentation and project-memory baseline.
 
 ## Current Repo State Summary
 

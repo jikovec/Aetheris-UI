@@ -1,6 +1,6 @@
 # Commands
 
-Last validated: 2026-07-07
+Last validated: 2026-07-09
 
 ## Repo-Declared Commands
 
@@ -16,7 +16,7 @@ These commands are useful for future validation and do not require a scaffolded 
 git status --short --branch
 git ls-files
 Get-ChildItem -Force
-Get-ChildItem -Recurse -File docs, reports, DOCUMENTATION
+Get-ChildItem -Recurse -File docs, reports, handoffs, DOCUMENTATION
 ```
 
 If `rg` is unavailable or blocked in the Windows app runtime, use:
@@ -43,3 +43,13 @@ npm run typecheck
 Do not run these until they exist in the repo or the user explicitly asks to scaffold them.
 
 Do not start a dev server unless the task requires it and the repo contains a runnable app.
+
+## Documentation Validation Commands
+
+Use these after docs/index edits:
+
+```powershell
+Get-Content -Raw docs\agent-index.json | ConvertFrom-Json
+git diff --check
+git status --short --branch
+```

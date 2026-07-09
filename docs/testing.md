@@ -1,6 +1,8 @@
 # Testing
 
-Last validated: 2026-07-07
+Last validated: 2026-07-09
+
+Tags: #repo/testing
 
 ## Current Test Status
 
@@ -25,10 +27,17 @@ For documentation-memory work, validate by checking:
 git status --short --branch
 git ls-files
 Get-ChildItem -Force
-Get-ChildItem -Recurse -File docs, reports, DOCUMENTATION
+Get-ChildItem -Recurse -File docs, reports, handoffs, DOCUMENTATION
 ```
 
 Then compare memory docs against actual files present in the checkout.
+
+For documentation/indexing changes, also validate:
+
+```powershell
+Get-Content -Raw docs\agent-index.json | ConvertFrom-Json
+git diff --check
+```
 
 ## Future Testing Direction
 

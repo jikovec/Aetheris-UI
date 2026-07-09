@@ -1,6 +1,8 @@
 # Decisions
 
-Last validated: 2026-07-07
+Last validated: 2026-07-09
+
+Tags: #repo/decision #aetheris/browser-extension
 
 ## Confirmed By Repo Contents
 
@@ -8,6 +10,9 @@ Last validated: 2026-07-07
 - No app source, manifests, tests, CI workflows, or release artifacts are present.
 - No package manager is confirmed by a manifest.
 - No license is confirmed by a `LICENSE` file.
+- Obsidian workspace state must remain untracked through `.gitignore`.
+- `docs/agent-index.json` is the canonical machine-readable future-agent index.
+- Existing lowercase docs such as `docs/testing.md` and `docs/decisions.md` remain canonical to avoid unnecessary case-only path churn on Windows.
 
 ## Planning Decisions From Research
 
@@ -25,6 +30,8 @@ These are accepted planning inputs for future work unless the user changes direc
 | UI surfaces | Content script, popup, options page, minimal background logic | Planned |
 | Data model | Local settings/snippets, generic examples only | Planned |
 | License | MPL-2.0 | Recommended, not adopted until `LICENSE` exists |
+| Obsidian integration | Local-first Markdown docs, ignored `.obsidian/` | Implemented for docs only |
+| Agent index | `docs/agent-index.json` plus `docs/AGENT-INDEX.md` | Implemented for docs only |
 
 ## Hard Product Non-Goals
 

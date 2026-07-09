@@ -1,12 +1,16 @@
 # Security Model
 
-Last validated: 2026-07-07
+Last validated: 2026-07-09
+
+Tags: #repo/security #aetheris/privacy #aetheris/local-only
 
 ## Current Implementation State
 
 No application source code or extension manifest exists yet, so there are no implemented permissions, storage schemas, content scripts, or background behaviors to inspect.
 
 This file records the intended security and privacy model for future implementation.
+
+The broader security hub is [SECURITY.md](SECURITY.md).
 
 ## Intended Security Boundaries
 
@@ -50,3 +54,4 @@ Planned data handling:
 - Actual storage schema is unknown until source exists.
 - Actual CSP and web-accessible resources are unknown until source exists.
 - Actual release packaging controls are unknown until build scripts exist.
+- Actual source-package review controls are unknown until release automation exists.

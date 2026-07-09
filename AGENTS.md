@@ -5,17 +5,20 @@
 For future Codex work in this repository, read these files first:
 
 1. `00_Index.md`
-2. `docs/current-state.md`
-3. `docs/decisions.md`
-4. `docs/commands.md`
-5. `docs/testing.md`
-6. `docs/security-model.md`
-7. `DOCUMENTATION/deep-research-report.md` when planning or scaffolding product work
+2. `docs/INDEX.md`
+3. `docs/current-state.md`
+4. `docs/decisions.md`
+5. `docs/commands.md`
+6. `docs/testing.md`
+7. `docs/security-model.md`
+8. `docs/AGENT-INDEX.md`
+9. `docs/agent-index.json`
+10. `DOCUMENTATION/deep-research-report.md` when planning or scaffolding product work
 
 ## Repository Truth Rules
 
 - Treat current repository files, manifests, tests, and configs as higher priority than planning notes.
-- As of the 2026-07-07 validation pass, this checkout does not contain application source code, package manifests, extension manifests, tests, CI workflows, or release artifacts.
+- As of the 2026-07-09 indexing pass, this checkout does not contain application source code, package manifests, extension manifests, tests, CI workflows, or release artifacts.
 - Do not invent runnable commands. If `package.json` or another manifest is absent, say that no project commands are declared.
 - Do not move, delete, or rename files unless the user explicitly asks.
 - Do not edit application source code when the request is documentation-only.
@@ -35,6 +38,16 @@ Preserve these guardrails unless the user changes the product direction:
 - no account, session, or authentication manipulation
 - no broad host permissions without a specific feature need
 - no real personal prompts, private workflow notes, keys, tokens, or credentials in the public repository
+
+## Documentation And Indexing Rules
+
+- Keep documentation GitHub-compatible first: use normal relative Markdown links for durable navigation.
+- Obsidian usage is local-only. Do not track `.obsidian/`, Obsidian Sync state, workspace state, private notes, plugin state, or local browser profile state.
+- Keep `docs/agent-index.json` aligned with the human-readable docs whenever source, commands, reports, handoffs, or safety rules change.
+- When adding source files later, update `docs/SOURCE-MAP.md`, `docs/CONNECTIONS.md`, `docs/current-state.md`, `docs/commands.md`, and `docs/testing.md` in the same change.
+- When creating a meaningful report, add it to `reports/INDEX.md`.
+- When leaving follow-up work for another agent, add or update `handoffs/INDEX.md`.
+- Use Obsidian tags only on hub/index docs and durable reports. Avoid tag spam inside ordinary prose.
 
 ## Workflow Notes
 
