@@ -50,13 +50,13 @@ body:
     attributes:
       label: Relevant paths or links
       description: Repository paths, Issues, PRs, reports, or docs that define the work.
-      placeholder: docs/current-state.md, #12
+      placeholder: "docs/current-state.md, #12"
   - type: input
     id: dependencies
     attributes:
       label: Dependencies or blockers
       description: Existing work objects or owner decisions that must happen first.
-      placeholder: None, or #2 / licensing decision
+      placeholder: "None, or #2 / licensing decision"
   - type: checkboxes
     id: public-safe
     attributes:
