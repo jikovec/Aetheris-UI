@@ -1,0 +1,66 @@
+name: Work item
+description: Propose an actionable repository change without creating a competing priority/type system.
+title: ""
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form for actionable work. Search existing Issues first.
+        Do not include secrets, private prompts, user data, credentials, or sensitive vulnerability details.
+        Security-sensitive matters must follow docs/SECURITY.md.
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Outcome
+      description: Describe the concrete repository or product outcome.
+      placeholder: What should be true when this work is complete?
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Current evidence
+      description: Point to current source, docs, tests, screenshots, logs, or reproducible behavior.
+      placeholder: What demonstrates the current state or problem?
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: List verifiable completion conditions.
+      placeholder: |
+        - Criterion 1
+        - Criterion 2
+    validations:
+      required: true
+  - type: dropdown
+    id: security
+    attributes:
+      label: Security/privacy sensitivity
+      description: Select review sensitivity. Do not include sensitive details here.
+      options:
+        - No known security/privacy impact
+        - Security/privacy review required
+    validations:
+      required: true
+  - type: input
+    id: paths
+    attributes:
+      label: Relevant paths or links
+      description: Repository paths, Issues, PRs, reports, or docs that define the work.
+      placeholder: "docs/current-state.md, #12"
+  - type: input
+    id: dependencies
+    attributes:
+      label: Dependencies or blockers
+      description: Existing work objects or owner decisions that must happen first.
+      placeholder: "None, or #2 / licensing decision"
+  - type: checkboxes
+    id: public-safe
+    attributes:
+      label: Public-data check
+      options:
+        - label: I have not included secrets, credentials, private prompts, user data, or sensitive vulnerability details.
+          required: true

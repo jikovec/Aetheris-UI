@@ -1,8 +1,10 @@
 {
   "repoName": "Aetheris UI",
+  "repository": "jikovec/Aetheris-UI",
+  "defaultBranch": "main",
   "repoPurpose": "Planning and documentation repository for a future local-only browser extension that enhances the ChatGPT web UI at https://chatgpt.com/*.",
   "status": {
-    "lastReviewed": "2026-07-09",
+    "lastReviewed": "2026-09-30",
     "implementationState": "documentation-and-planning-only",
     "hasRunnableApp": false,
     "hasPackageManifest": false,
@@ -10,7 +12,8 @@
     "hasSourceScaffold": false,
     "hasTests": false,
     "hasCi": false,
-    "hasReleaseArtifacts": false
+    "hasReleaseArtifacts": false,
+    "hasGithubWorkTemplates": true
   },
   "primaryLanguages": [],
   "frameworks": [
@@ -31,15 +34,24 @@
     "rootIndex": "00_Index.md",
     "agentInstructions": "AGENTS.md",
     "readme": "README.md",
+    "contributing": "CONTRIBUTING.md",
+    "support": "SUPPORT.md",
+    "changelog": "CHANGELOG.md",
     "docsIndex": "docs/INDEX.md",
+    "securityPolicy": "docs/SECURITY.md",
     "researchReport": "DOCUMENTATION/deep-research-report.md",
     "reportsIndex": "reports/INDEX.md",
-    "handoffsIndex": "handoffs/INDEX.md"
+    "handoffsIndex": "handoffs/INDEX.md",
+    "issueTemplates": ".github/ISSUE_TEMPLATE/",
+    "pullRequestTemplate": ".github/pull_request_template.md"
   },
   "docsEntryPoints": [
+    "README.md",
     "00_Index.md",
     "AGENTS.md",
-    "README.md",
+    "CONTRIBUTING.md",
+    "SUPPORT.md",
+    "CHANGELOG.md",
     "docs/INDEX.md",
     "docs/current-state.md",
     "docs/AGENT-INDEX.md",
@@ -47,6 +59,12 @@
     "docs/CONNECTIONS.md",
     "docs/OBSIDIAN.md"
   ],
+  "workManagement": {
+    "ledger": "GitHub Issues",
+    "questionsAndExploration": "GitHub Discussions",
+    "delivery": "issue/work object -> branch -> verification -> pull request",
+    "mergeRequiresExplicitAuthorization": true
+  },
   "sourceAreas": [],
   "plannedSourceAreas": [
     "entrypoints/",
@@ -62,15 +80,11 @@
     "tests/"
   ],
   "commands": {
-    "repoDeclared": [],
+    "repoDeclaredApplicationCommands": [],
     "safeInspection": [
       "git status --short --branch",
       "git ls-files",
-      "Get-ChildItem -Force",
-      "Get-ChildItem -Recurse -File docs, reports, handoffs, DOCUMENTATION"
-    ],
-    "docsValidation": [
-      "Get-Content -Raw docs\\agent-index.json | ConvertFrom-Json",
+      "git log --oneline --decorate -n 20",
       "git diff --check"
     ],
     "doNotRunUntilDeclared": [
@@ -92,82 +106,31 @@
   },
   "decisions": {
     "location": "docs/decisions.md",
-    "note": "Lowercase path remains canonical in this Windows-first repo."
+    "unresolvedOwnerDecisions": [
+      "project license",
+      "Code of Conduct selection",
+      "dedicated private security-reporting route"
+    ]
   },
   "safetyRules": [
-    "Treat source, manifests, configs, tests, and CI as higher-priority truth than planning docs when they exist.",
-    "Do not invent runnable commands.",
-    "Do not modify runtime or product behavior for documentation-only work.",
-    "Do not commit, push, deploy, publish, tag, or release unless explicitly requested.",
+    "Treat current source, manifests, configs, tests, workflows, and current documentation as higher-priority truth than planning notes.",
+    "Inspect and preserve unrelated dirty/untracked local work before edits.",
+    "Do not invent runnable commands, implementation state, tests, deployment, or release results.",
+    "Do not merge, deploy, publish, tag, or release without explicit authorization.",
     "Keep Aetheris UI local-only unless the product direction changes explicitly.",
     "Do not add telemetry, analytics, cloud sync, remote code, automatic message sending, or account/session manipulation."
   ],
   "sensitivePathRules": [
     "Do not track .obsidian/.",
-    "Do not commit Obsidian Sync state, workspace state, plugin state, browser profile data, generated dependency folders, or build output.",
-    "Do not commit private prompts, private workflow notes, credentials, keys, tokens, account IDs, private URLs, or secrets."
+    "Do not commit browser profile data, generated dependency/build output, temporary/backup artifacts, private prompts, private workflow notes, credentials, keys, tokens, private URLs, or secrets."
   ],
-  "obsidianConventions": {
-    "localOnly": true,
-    "trackObsidianFolder": false,
-    "canonicalLinks": "relative Markdown links",
-    "wikiLinks": "private-local-only-not-canonical",
-    "graphHubs": [
-      "00_Index.md",
-      "docs/INDEX.md",
-      "docs/AGENT-INDEX.md",
-      "docs/SOURCE-MAP.md",
-      "docs/CONNECTIONS.md",
-      "docs/ROADMAP.md",
-      "reports/INDEX.md",
-      "handoffs/INDEX.md"
-    ]
-  },
-  "tagTaxonomy": {
-    "global": [
-      "#repo/index",
-      "#repo/architecture",
-      "#repo/development",
-      "#repo/testing",
-      "#repo/security",
-      "#repo/deployment",
-      "#repo/roadmap",
-      "#repo/decision",
-      "#repo/source-map",
-      "#repo/connection-map",
-      "#agent/orientation",
-      "#agent/handoff",
-      "#agent/report",
-      "#obsidian/local",
-      "#obsidian/graph"
-    ],
-    "repoSpecific": [
-      "#aetheris/browser-extension",
-      "#aetheris/chatgpt-ui",
-      "#aetheris/wxt",
-      "#aetheris/mv3",
-      "#aetheris/local-only",
-      "#aetheris/privacy",
-      "#aetheris/theme",
-      "#aetheris/snippets",
-      "#aetheris/dom-contracts",
-      "#aetheris/release"
-    ],
-    "doNotUse": [
-      "#cloud-sync",
-      "#telemetry",
-      "#auto-send",
-      "#official-chatgpt",
-      "#account-automation",
-      "#production-ready"
-    ]
-  },
   "knownRisks": [
-    "The repository has no runnable app scaffold yet.",
+    "The repository has no runnable application scaffold yet.",
     "Research recommendations may become stale and must be re-verified before implementation.",
+    "The project license is unresolved.",
+    "No dedicated private security-reporting contact is declared.",
     "ChatGPT DOM integration is expected to be fragile once source work begins.",
-    "Browser extension policy requirements can change.",
-    "Private local Obsidian state must remain untracked."
+    "Browser extension policy requirements can change."
   ],
-  "lastReviewed": "2026-07-09"
+  "lastReviewed": "2026-09-30"
 }

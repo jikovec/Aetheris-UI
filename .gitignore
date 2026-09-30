@@ -1,2 +1,25 @@
+# Local knowledge/workspace state
 .obsidian/
 
+# Dependency, build, and test output
+node_modules/
+.output/
+dist/
+build/
+coverage/
+.cache/
+
+# Temporary and backup artifacts
+tmp/
+temp/
+backup/
+backups/
+*.log
+*.bak
+*.old
+*.orig
+*.rej
+
+# Operating-system metadata
+.DS_Store
+Thumbs.db

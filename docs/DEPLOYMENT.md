@@ -1,50 +1,47 @@
 # Deployment And Release
 
-Last reviewed: 2026-07-09
+Last reviewed: 2026-09-30
 
 Tags: #repo/deployment #aetheris/release
 
-No deployment, package, publishing, or release automation exists in this repository yet.
-
 ## Current State
 
-The checkout has no:
+No deployment, package, publishing, or release automation exists.
 
-- package manifest
-- build command
-- extension build output
-- CI workflow
-- release workflow
-- browser-store assets
-- release zip artifacts
+The repository has no application manifest, build command, extension build output, CI workflow, release workflow, browser-store package, hosted service, or production environment.
 
-No deploy command should be invented or run.
+## Repository Merge Boundary
 
-## Planned Release Direction
+At the current baseline:
 
-The research report recommends local/unpacked release readiness first:
+~~~text
+merge to main != deployment
+merge to main != publication
+merge to main != software release
+~~~
 
-- Chrome/Chromium unpacked local install instructions
-- Firefox temporary add-on instructions
+A merge changes repository content only. It is not evidence that an extension was built, installed, uploaded, published, or deployed.
+
+Release, publication, or future store submission requires separate implementation, verification, and explicit authorization.
+
+## Planned Local Release Direction
+
+The research report recommends local/unpacked release readiness before browser-store publication:
+
+- Chrome/Chromium unpacked local-install instructions
+- Firefox temporary/local add-on instructions
 - source/rebuild package guidance
 - smoke-test checklist
 - privacy and permission rationale
 - future store-readiness notes
 
-The proposed asset names from research are planning inputs only until build scripts exist:
+Proposed asset names in research remain planning inputs until build/package scripts exist:
 
 - `aetheris-ui v0.0.1.zip`
 - `aetheris-ui v0.0.1 delta.zip`
 
-## Future Release Documentation
+## Future Documentation Requirements
 
-After source and scripts exist, update this file with:
+When a release pipeline exists, this file must record exact build/package commands, artifact paths, required checks, secrets/environment handling, manual versus automatic triggers, rollback/recovery procedure, release-versus-deployment distinction, and live/readback verification where applicable.
 
-- exact build commands from `package.json`
-- artifact output paths
-- checksum process if used
-- release checklist
-- CI workflow references
-- manual smoke checklist links
-- browser-store readiness notes
-
+Do not infer release or deployment success from a merge or CI result.
