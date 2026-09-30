@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Security policy
+    url: https://github.com/jikovec/Aetheris-UI/security/policy
+    about: Read the security policy before reporting security-sensitive information.
+  - name: Questions and design discussion
+    url: https://github.com/jikovec/Aetheris-UI/discussions
+    about: Use Discussions for exploratory questions and proposals that are not yet actionable work.

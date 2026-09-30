@@ -2,48 +2,72 @@
 
 Tags: #repo/index #aetheris/browser-extension #aetheris/chatgpt-ui #aetheris/local-only
 
-Aetheris UI is currently a planning and documentation repository for a future local-only browser extension that enhances the ChatGPT web UI at `https://chatgpt.com/*`.
+Aetheris UI is a public planning and documentation repository for a future local-only browser extension that enhances the ChatGPT web UI at `https://chatgpt.com/*`.
 
-No runnable extension is implemented in this checkout yet. The repository currently contains project memory, documentation, research, reports, and future-agent orientation files.
+## Status
 
-## Current Status
+The repository is not a runnable extension yet. The current branch contains documentation, research, reports, work-management metadata, and agent orientation only.
 
-- No `package.json` is present.
-- No extension manifest is present.
-- No `entrypoints/`, `src/`, or `tests/` directories are present.
-- No build, test, lint, package, CI, deploy, or release command is declared.
-- Existing WXT, TypeScript, npm, Node 24 LTS, and MV3 references are planning recommendations until source files are created.
+Implemented repository capabilities:
+
+- canonical documentation and project-memory indexes
+- architecture, development, testing, deployment, security, and roadmap planning
+- GitHub Issues as the persistent work ledger
+- contribution, support, changelog, Issue-form, and pull-request workflow metadata
+- local-only Obsidian guidance with `.obsidian/` excluded from version control
+
+Not implemented yet:
+
+- package or dependency manifest
+- extension manifest or source scaffold
+- browser-extension runtime behavior
+- automated tests or CI
+- build, package, deployment, or release automation
+- versioned software releases
+
+Planning references to WXT, TypeScript, npm, Node 24 LTS, Manifest V3, browser permissions, or release artifacts are recommendations until source/configuration files establish them.
+
+## Intended Audience
+
+This repository is for the project owner, maintainers, contributors, and automated agents preparing or reviewing Aetheris UI. Users cannot install Aetheris UI from this repository yet because no runnable extension exists.
+
+## Product Boundaries
+
+Aetheris UI is intended to remain local-only and least-privilege. Do not add telemetry, analytics, cloud sync, remote code, hidden data export, automatic message sending, account/session/authentication manipulation, or broad host permissions without an explicit documented product decision.
+
+Do not commit real personal prompts, private workflow notes, credentials, keys, tokens, browser-profile data, or other private local state.
 
 ## Documentation
 
-- [Project memory index](00_Index.md)
 - [Documentation hub](docs/INDEX.md)
 - [Current state](docs/current-state.md)
-- [Architecture plan](docs/ARCHITECTURE.md)
-- [Development workflow](docs/DEVELOPMENT.md)
-- [Testing status](docs/testing.md)
-- [Security and privacy model](docs/security-model.md)
-- [Obsidian guide](docs/OBSIDIAN.md)
-- [Future-agent index](docs/AGENT-INDEX.md)
-- [Machine-readable agent index](docs/agent-index.json)
+- [Architecture](docs/ARCHITECTURE.md)
+- [Development](docs/DEVELOPMENT.md)
+- [Testing](docs/testing.md)
+- [Deployment and release](docs/DEPLOYMENT.md)
+- [Security policy](docs/SECURITY.md)
+- [Security model](docs/security-model.md)
+- [Decisions](docs/decisions.md)
+- [Roadmap](docs/ROADMAP.md)
+- [Commands](docs/commands.md)
+- [Agent orientation](AGENTS.md)
 - [Deep research report](DOCUMENTATION/deep-research-report.md)
 
-## Privacy And Security Boundaries
+## Setup And Usage
 
-Aetheris UI is planned as a local-only extension. Preserve these boundaries unless the product direction is explicitly changed:
+There is currently no application installation, build, run, test, or package command. Do not invent one. Safe repository inspection commands are documented in [docs/commands.md](docs/commands.md).
 
-- no analytics or telemetry
-- no cloud sync
-- no remote code
-- no hidden data export
-- no automatic ChatGPT message sending
-- no account, authentication, or session manipulation
-- no broad host permissions without a documented feature need
-- no real personal prompts, credentials, private workflow notes, keys, or tokens in the public repository
+## Contributing, Support, And Security
 
-## Setup
+- See [CONTRIBUTING.md](CONTRIBUTING.md) before proposing changes.
+- Use [SUPPORT.md](SUPPORT.md) to choose between Issues, Discussions, and security reporting.
+- Read [docs/SECURITY.md](docs/SECURITY.md) before reporting security-sensitive information.
+- Notable accepted changes are tracked in [CHANGELOG.md](CHANGELOG.md).
 
-There is currently no application setup command. Do not run `npm`, build, test, or browser-extension commands until a package manifest and source scaffold exist.
+## License
 
-Safe repository inspection commands are documented in [docs/commands.md](docs/commands.md).
+No project license has been adopted. `MPL-2.0` is a research recommendation only; it is not the repository license until the owner explicitly adopts a license and a canonical license file is added.
 
+## Deployment And Release
+
+No deployment target or release automation exists. Merging repository changes does not deploy or publish an extension. Release and publication require separate implementation, verification, and explicit authorization.

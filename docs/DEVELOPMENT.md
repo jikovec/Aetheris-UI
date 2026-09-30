@@ -1,56 +1,64 @@
 # Development
 
-Last reviewed: 2026-07-09
+Last reviewed: 2026-09-30
 
 Tags: #repo/development #aetheris/wxt #aetheris/local-only
 
-This repository does not currently contain a runnable application scaffold. Development commands are not declared yet.
+## Current Development Mode
 
-## Current State
+The repository currently supports documentation, research, governance, and work-management changes only. No runnable application scaffold exists.
 
-There is no:
+No package/runtime prerequisite is declared for application development because there is no application manifest yet. Git is sufficient for repository inspection; use the editor/tooling of your choice for Markdown/JSON/YAML changes.
 
-- `package.json`
-- lockfile
-- WXT config
-- extension manifest
-- source directory
-- test directory
-- CI workflow
+## Orientation
 
-Because no package manifest exists, do not run `npm ci`, `npm run dev`, `npm run build`, `npm test`, lint, typecheck, or package commands for this repo.
+Before editing:
 
-## Safe Inspection
+1. Read `../AGENTS.md`.
+2. Read `current-state.md`, `decisions.md`, `commands.md`, and `testing.md`.
+3. Check the current `main` branch and relevant GitHub work object.
+4. In a local checkout, run `git status --short --branch` and preserve unrelated changes.
 
-Use the read-only commands in [commands.md](commands.md) to inspect the current repository.
+## Workflow
 
-## Planned Development Direction
+For material changes, use:
 
-The current research recommends:
+~~~text
+Issue / work object
+→ focused branch
+→ implementation or documentation change
+→ proportional verification
+→ pull request
+~~~
 
-- Windows-first setup
-- Arch Linux as the second documented environment
-- Node 24 LTS, re-verified at implementation time
-- npm and `package-lock.json`
-- WXT and TypeScript
-- Vitest for unit and DOM-fixture tests
-- GitHub Actions after source and package scripts exist
+Do not merge, deploy, publish, tag, or release without explicit authorization.
 
-These are recommendations only until source and manifests are added.
+## Current Commands
+
+There are no application install/build/test commands. See `commands.md` for safe inspection and documentation-validation commands.
 
 ## Future Scaffold Requirements
 
-The first source implementation pass should:
+When implementation begins, the first scaffold change must source its commands and dependencies from committed manifests/configuration and update:
 
-- add a package manifest and lockfile
-- document exact package scripts in [commands.md](commands.md)
-- update [current-state.md](current-state.md)
-- update [testing.md](testing.md)
-- update [SOURCE-MAP.md](SOURCE-MAP.md)
-- update [CONNECTIONS.md](CONNECTIONS.md)
-- update [agent-index.json](agent-index.json)
+- `current-state.md`
+- `decisions.md` if recommendations are accepted or superseded
+- `commands.md`
+- `testing.md`
+- `SOURCE-MAP.md`
+- `CONNECTIONS.md`
+- `agent-index.json`
 
-## Non-Goals
+The research recommendation of WXT, TypeScript, npm, Node 24 LTS, Vitest, and GitHub Actions must be re-verified at implementation time.
 
-Do not add generated dependency folders, browser profile data, private prompt libraries, secrets, build outputs, or release artifacts to the repository.
+## Generated And Local Files
 
+Do not commit dependency folders, build/test output, temporary/backup files, browser-profile data, `.obsidian/` state, private prompts, or secrets. `.gitignore` records the current recurrence-prevention rules.
+
+## Environment Variables
+
+No application environment variables are currently declared.
+
+## Debugging
+
+There is no runtime to debug yet. Documentation defects should be reproduced against the current repository files and reported through the normal Issue/PR workflow.

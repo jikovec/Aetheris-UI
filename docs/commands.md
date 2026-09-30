@@ -1,55 +1,64 @@
 # Commands
 
-Last validated: 2026-07-09
+Last validated: 2026-09-30
 
-## Repo-Declared Commands
+## Repository-Declared Application Commands
 
 None.
 
-No `package.json`, lockfile, WXT config, test config, or CI workflow is present in the checkout, so no application, build, test, lint, package, or release commands are currently declared by the repo.
+No package manifest, lockfile, WXT configuration, test configuration, CI workflow, build script, or release workflow exists, so the repository declares no application install, run, build, test, lint, typecheck, package, deployment, or release command.
 
-## Safe Inspection Commands
+## Safe Git Inspection
 
-These commands are useful for future validation and do not require a scaffolded app:
+These commands are valid in any local checkout with Git installed:
 
-```powershell
+~~~text
 git status --short --branch
 git ls-files
+git log --oneline --decorate -n 20
+git diff --check
+~~~
+
+Use `git status --short --branch` before editing a local checkout so unrelated dirty/untracked work is preserved.
+
+## File Inspection
+
+POSIX shell examples, when those utilities are available:
+
+~~~sh
+find . -maxdepth 2 -type f -print
+find docs reports handoffs DOCUMENTATION -type f -print
+~~~
+
+PowerShell examples:
+
+~~~powershell
 Get-ChildItem -Force
 Get-ChildItem -Recurse -File docs, reports, handoffs, DOCUMENTATION
-```
+~~~
 
-If `rg` is unavailable or blocked in the Windows app runtime, use:
+These are environment helpers, not application commands.
 
-```powershell
-Select-String -Path docs\*.md, reports\*.md, DOCUMENTATION\*.md -Pattern "text to find"
-```
+## Structured Documentation Validation
+
+After editing repository metadata:
+
+- parse `docs/agent-index.json` as JSON
+- parse edited `.yml`/`.yaml` Issue forms as YAML
+- verify relative Markdown links and referenced files
+- run `git diff --check`
+
+Use a parser available in the current environment; the repository does not currently declare a language runtime solely for documentation validation.
 
 ## Future Commands
 
-The research report recommends an npm-based WXT project. Once `package.json` exists, read it before running commands.
+The research report recommends an npm/WXT project, but the following are not current repository commands and must not be treated as executable requirements until a manifest declares them:
 
-Common commands that may be expected after scaffolding, but are not currently declared:
+- `npm ci`
+- `npm run dev`
+- `npm run build`
+- `npm test`
+- `npm run lint`
+- `npm run typecheck`
 
-```powershell
-npm ci
-npm run dev
-npm run build
-npm test
-npm run lint
-npm run typecheck
-```
-
-Do not run these until they exist in the repo or the user explicitly asks to scaffold them.
-
-Do not start a dev server unless the task requires it and the repo contains a runnable app.
-
-## Documentation Validation Commands
-
-Use these after docs/index edits:
-
-```powershell
-Get-Content -Raw docs\agent-index.json | ConvertFrom-Json
-git diff --check
-git status --short --branch
-```
+Do not start a development server unless source exists and the task requires it.

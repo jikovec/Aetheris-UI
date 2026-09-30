@@ -1,63 +1,43 @@
 # Testing
 
-Last validated: 2026-07-09
+Last validated: 2026-09-30
 
 Tags: #repo/testing
 
 ## Current Test Status
 
-No automated tests are present.
+No automated application tests are present. There is no package manifest, test runner, source tree, fixture tree, browser automation configuration, or CI workflow.
 
-The checkout currently has no:
+Application unit/integration/e2e/build checks are therefore not applicable to the current baseline.
 
-- package manifest
-- test runner config
-- source files
-- test files
-- browser fixture files
-- CI workflow
+## Documentation And Governance Validation
 
-Therefore, there is no runnable project test suite at this time.
+For repository documentation/metadata changes, verify:
 
-## Current Validation Scope
+1. local Git state with `git status --short --branch` when a local checkout is available;
+2. whitespace/patch correctness with `git diff --check` when Git diff state is available;
+3. relative Markdown links and referenced files;
+4. JSON syntax for `docs/agent-index.json`;
+5. YAML syntax/schema shape for Issue forms and other edited YAML;
+6. that current-state, command, security, deployment, and navigation claims agree with the actual tree.
 
-For documentation-memory work, validate by checking:
+Never treat an unavailable local check as passing.
 
-```powershell
-git status --short --branch
-git ls-files
-Get-ChildItem -Force
-Get-ChildItem -Recurse -File docs, reports, handoffs, DOCUMENTATION
-```
+## Evidence States
 
-Then compare memory docs against actual files present in the checkout.
+Use explicit result language:
 
-For documentation/indexing changes, also validate:
-
-```powershell
-Get-Content -Raw docs\agent-index.json | ConvertFrom-Json
-git diff --check
-```
+- `passed` - the check ran and succeeded
+- `failed` - the check ran and failed
+- `blocked` - a prerequisite prevented execution
+- `unavailable` - the required tool/environment was not accessible
+- `not applicable` - the check does not apply to the current repository state
+- `not run` - applicable but intentionally not executed
 
 ## Future Testing Direction
 
-The research report recommends layered testing for the eventual extension:
+The research report recommends future linting, typechecking, unit tests, DOM fixture/contract tests, build checks, and manual smoke checks on `chatgpt.com`.
 
-- linting
-- typechecking
-- unit tests
-- fixture-based DOM contract tests
-- build checks
-- manual smoke checks on `chatgpt.com`
+Authenticated live ChatGPT automation should not become a required CI gate merely because manual smoke testing is useful.
 
-The report also recommends not making authenticated live ChatGPT automation a required CI gate.
-
-When a package manifest is added, update this file with the exact scripts from `package.json` and the expected validation order.
-
-## Unknowns
-
-- Test runner is not implemented.
-- Browser automation strategy is not implemented.
-- DOM fixtures are not present.
-- Manual smoke checklist is not present.
-- CI validation is not present.
+When the source scaffold is added, replace planning language here with exact scripts/configuration from the repository and document how to add tests, required fixtures/services, browser targets, and CI relationships.

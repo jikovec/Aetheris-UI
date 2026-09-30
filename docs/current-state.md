@@ -1,92 +1,74 @@
 # Current State
 
-Last validated: 2026-07-09
+Last validated: 2026-09-30
 
-## Repository Status
+## Canonical Repository Baseline
 
-At the start of the 2026-07-07 validation pass, the checkout contained:
+- Repository: `jikovec/Aetheris-UI`
+- Default branch: `main`
+- Baseline revision inspected for this pass: `73d99948dc218a43dea2d30a86cd40872a96416c`
+- Repository visibility: public
+- GitHub Issues and Discussions are enabled.
+- The baseline revision contains documentation/planning material only.
 
-- `.git/`
-- `DOCUMENTATION/deep-research-report.md`
-
-The Git branch was `main`, with no commits on the local branch and `origin/main` reported as gone.
-
-The 2026-07-07 validation pass added repo-root project memory docs and a validation report. It did not add application source code.
-
-The 2026-07-09 indexing pass added documentation, Obsidian, report, handoff, and future-agent orientation indexes. It did not add application source code.
+This file describes canonical repository state. Local working trees can contain uncommitted or untracked work and must be inspected directly before local edits.
 
 ## Implementation Status
 
-Aetheris UI is currently a planning/documentation repository, not a runnable browser extension.
+Aetheris UI is not a runnable browser extension yet.
 
-Not present in the checkout:
+Not present at the baseline revision:
 
-- `package.json`
-- `package-lock.json`
-- WXT config
+- `package.json` or a lockfile
+- WXT configuration
 - extension manifest
 - `entrypoints/`
 - `src/`
 - `tests/`
 - `.github/workflows/`
+- build/package output
 - release artifacts
-- generated builds
+- deployment automation
 
-Because no package or extension manifest exists, there are no repo-declared app commands, test commands, browser targets, permissions, or build outputs to validate.
+Therefore no repository-declared application install, run, build, test, lint, typecheck, package, deployment, or release command exists.
 
-## Documentation And Indexing Status
+## Repository And Governance Surface
 
-Present in the checkout:
+The repository maintains:
 
-- `README.md`
-- `00_Index.md`
-- `AGENTS.md`
-- `docs/INDEX.md`
-- `docs/AGENT-INDEX.md`
-- `docs/SOURCE-MAP.md`
-- `docs/CONNECTIONS.md`
-- `docs/OBSIDIAN.md`
-- `docs/agent-index.json`
-- `reports/INDEX.md`
-- `handoffs/INDEX.md`
+- `README.md` and `00_Index.md` as public/memory entry points
+- `AGENTS.md` for automated-agent invariants
+- `docs/` as the primary documentation root
+- `CONTRIBUTING.md`, `SUPPORT.md`, and `CHANGELOG.md` for public repository workflow
+- `.github/ISSUE_TEMPLATE/` and `.github/pull_request_template.md` for GitHub work intake and review
+- `reports/` for durable evidence
+- `handoffs/` for real delegated/blocked follow-up work
+- `docs/agent-index.json` as the machine-readable agent index
 
-The local `.obsidian/` folder is intentionally ignored through `.gitignore`.
+Local `.obsidian/` state and generated/dependency/build/temp artifacts are intentionally excluded by `.gitignore`.
 
 ## Product Direction
 
-The existing research report recommends Aetheris UI as a local-only, cross-browser WebExtension for `https://chatgpt.com/*`.
+The research and planning documents describe a future local-only, cross-browser WebExtension for `https://chatgpt.com/*` with local settings, visual enhancements, snippets/templates, and user-initiated helpers.
 
-Recommended planning direction from the report:
-
-- WXT
-- TypeScript
-- npm
-- Node 24 LTS
-- Manifest V3 for Chrome/Chromium and Firefox
-- local settings with extension storage
-- tokenized dark UI theme system
-- popup and options page
-- content script scoped to ChatGPT
-- no telemetry, cloud sync, remote code, automatic message sending, or session manipulation
-
-These are planning recommendations until source files and manifests are created.
+WXT, TypeScript, npm, Node 24 LTS, Manifest V3, storage design, and browser permission choices remain recommendations until implementation files establish them.
 
 ## Source Of Truth
 
-Use this order when future facts conflict:
+Use this order when facts conflict:
 
-1. Current source code, manifests, lockfiles, configs, tests, and CI files.
-2. Current documentation in `docs/`, root docs, and machine-readable repo indexes.
+1. Current source, manifests, lockfiles, configuration, tests, workflows, and other executable repository state.
+2. Current canonical documentation and indexes.
 3. `DOCUMENTATION/deep-research-report.md`.
 4. Reports and handoffs.
 5. Older chat or memory summaries.
 
-## Unknowns
+## Known Unresolved Matters
 
-- Exact implementation stack is not confirmed by source files.
-- Exact package scripts are unknown.
-- Exact browser permissions are unknown.
-- Exact license is unknown because no `LICENSE` file is present.
-- Test strategy is not implemented.
-- CI strategy is not implemented.
+- The implementation stack is not source-confirmed.
+- The project license is unresolved; MPL-2.0 is a recommendation only.
+- No Code of Conduct has been selected.
+- No dedicated private security contact is declared.
+- Test/CI strategy is not implemented.
 - Release packaging is not implemented.
+- Browser-store submission is not a v0.0.1 requirement.
