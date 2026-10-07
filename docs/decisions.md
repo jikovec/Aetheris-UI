@@ -1,12 +1,12 @@
 # Decisions
 
-Last validated: 2026-07-09
+Last validated: 2026-10-07
 
 Tags: #repo/decision #aetheris/browser-extension
 
 ## Confirmed By Repo Contents
 
-- This checkout currently contains planning documentation only.
+- This checkout contains planning documentation and the agent toolkit; no application implementation.
 - No app source, manifests, tests, CI workflows, or release artifacts are present.
 - No package manager is confirmed by a manifest.
 - No license is confirmed by a `LICENSE` file.
@@ -47,3 +47,21 @@ These are accepted planning inputs for future work unless the user changes direc
 ## Decision Maintenance
 
 When implementation files are added, update this file if source truth differs from these planning decisions. Do not preserve recommendations that have been superseded by manifests, configs, or code.
+
+## Agent toolkit adoption — 2026-10-07
+
+The owner requested and adopted the portable toolkit and standing ordinary repository
+delivery policy in [authorization](../.agent/contracts/authorization.md). This supersedes
+older agent-setup statements that granted no standing commit/push/merge authority, while
+preserving narrower task limits and separate release/deploy/publication requirements.
+The adoption is part of the owner-requested bootstrap, not a self-issued agent grant.
+
+Canonical workflow reasoning lives in `skills/`; policy lives in `.agent/contracts/`.
+Provider adapters remain thin. The pre-existing project-workflow vocabulary is retained
+as a router; `docs/agent-workflow.md` becomes a compatibility pointer. Product design,
+privacy boundaries and the lack of an app scaffold remain unchanged.
+
+No verified registry identity or project memory binding was found during reconciliation.
+Use the stable repository-qualified project ID and leave Mind-Seed disabled. A later
+verified registry binding must reconcile identity instead of silently creating a duplicate.
+See the [bootstrap report](../reports/agent-toolkit-bootstrap-2026-10-07.md) for dated evidence.

@@ -1,55 +1,41 @@
 # Commands
 
-Last validated: 2026-07-09
+Last validated: 2026-10-07
 
-## Repo-Declared Commands
+## Application commands
 
-None.
+None. No application package/extension manifest, lockfile, WXT config, test configuration
+or CI workflow exists. Do not run `npm ci`, `npm run dev`, `npm run build`, `npm test`,
+`npm run lint` or `npm run typecheck` until source declares them or product scaffolding
+is requested. Do not start a dev server for documentation/toolkit work.
 
-No `package.json`, lockfile, WXT config, test config, or CI workflow is present in the checkout, so no application, build, test, lint, package, or release commands are currently declared by the repo.
+## Toolkit validation
 
-## Safe Inspection Commands
+The toolkit uses Python 3.9+ with PyYAML. This is tooling, not an adopted application stack.
+Use an available environment that supplies both; report a missing dependency rather
+than claiming a pass or silently modifying system packages. No environment setup runs
+automatically, and the toolkit does not prescribe an installation method.
 
-These commands are useful for future validation and do not require a scaffolded app:
+```bash
+python3 .agent/hooks/toolkit/validate.py
+```
 
-```powershell
+The [manual hook contract](../.agent/hooks/README.md) defines inputs, effects and exit
+codes. `--root <path>` permits validation of an isolated fixture. Use current Git metadata
+to verify the configured remote/owner/default branch in addition to static validation.
+
+```bash
 git status --short --branch
-git ls-files
-Get-ChildItem -Force
-Get-ChildItem -Recurse -File docs, reports, handoffs, DOCUMENTATION
-```
-
-If `rg` is unavailable or blocked in the Windows app runtime, use:
-
-```powershell
-Select-String -Path docs\*.md, reports\*.md, DOCUMENTATION\*.md -Pattern "text to find"
-```
-
-## Future Commands
-
-The research report recommends an npm-based WXT project. Once `package.json` exists, read it before running commands.
-
-Common commands that may be expected after scaffolding, but are not currently declared:
-
-```powershell
-npm ci
-npm run dev
-npm run build
-npm test
-npm run lint
-npm run typecheck
-```
-
-Do not run these until they exist in the repo or the user explicitly asks to scaffold them.
-
-Do not start a dev server unless the task requires it and the repo contains a runnable app.
-
-## Documentation Validation Commands
-
-Use these after docs/index edits:
-
-```powershell
-Get-Content -Raw docs\agent-index.json | ConvertFrom-Json
 git diff --check
-git status --short --branch
+git diff --cached --check
+git ls-files
 ```
+
+Diff checks cover tracked/staged changes; the toolkit validator also checks newly added
+files. Review the final explicit path list before staging or delivery.
+
+## Discovery checks
+
+See [provider discovery](../.agent/workflows/provider-discovery.md) for model-free native
+checks. Claude import syntax, native skill discovery and agent routing are separate from
+application tests. [Routing cases](../.agent/evals/skill-routing.md) need semantic review.

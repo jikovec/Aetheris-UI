@@ -2,7 +2,7 @@
   "repoName": "Aetheris UI",
   "repoPurpose": "Planning and documentation repository for a future local-only browser extension that enhances the ChatGPT web UI at https://chatgpt.com/*.",
   "status": {
-    "lastReviewed": "2026-07-09",
+    "lastReviewed": "2026-10-07",
     "implementationState": "documentation-and-planning-only",
     "hasRunnableApp": false,
     "hasPackageManifest": false,
@@ -10,7 +10,8 @@
     "hasSourceScaffold": false,
     "hasTests": false,
     "hasCi": false,
-    "hasReleaseArtifacts": false
+    "hasReleaseArtifacts": false,
+    "hasAgentToolkit": true
   },
   "primaryLanguages": [],
   "frameworks": [
@@ -34,7 +35,15 @@
     "docsIndex": "docs/INDEX.md",
     "researchReport": "DOCUMENTATION/deep-research-report.md",
     "reportsIndex": "reports/INDEX.md",
-    "handoffsIndex": "handoffs/INDEX.md"
+    "handoffsIndex": "handoffs/INDEX.md",
+    "agentToolkit": ".agent/README.md",
+    "projectMetadata": ".agent/project.yaml",
+    "agentWorkflow": "docs/agent-workflow.md",
+    "claudeInstructions": "CLAUDE.md",
+    "toolkitValidator": ".agent/hooks/toolkit/validate.py",
+    "toolkitRouting": ".agent/evals/skill-routing.md",
+    "toolkitReport": "reports/agent-toolkit-bootstrap-2026-10-07.md",
+    "toolkitHandoff": "handoffs/2026-10-07-agent-toolkit-integration.md"
   },
   "docsEntryPoints": [
     "00_Index.md",
@@ -45,7 +54,9 @@
     "docs/AGENT-INDEX.md",
     "docs/SOURCE-MAP.md",
     "docs/CONNECTIONS.md",
-    "docs/OBSIDIAN.md"
+    "docs/OBSIDIAN.md",
+    ".agent/README.md",
+    "docs/agent-workflow.md"
   ],
   "sourceAreas": [],
   "plannedSourceAreas": [
@@ -62,7 +73,9 @@
     "tests/"
   ],
   "commands": {
-    "repoDeclared": [],
+    "repoDeclared": [
+      "python3 .agent/hooks/toolkit/validate.py"
+    ],
     "safeInspection": [
       "git status --short --branch",
       "git ls-files",
@@ -80,6 +93,9 @@
       "npm test",
       "npm run lint",
       "npm run typecheck"
+    ],
+    "toolkitValidation": [
+      "python3 .agent/hooks/toolkit/validate.py"
     ]
   },
   "reports": {
@@ -98,7 +114,7 @@
     "Treat source, manifests, configs, tests, and CI as higher-priority truth than planning docs when they exist.",
     "Do not invent runnable commands.",
     "Do not modify runtime or product behavior for documentation-only work.",
-    "Do not commit, push, deploy, publish, tag, or release unless explicitly requested.",
+    "Follow .agent/contracts/authorization.md for ordinary repository delivery; release, deploy and publish require applicable effect-specific authority.",
     "Keep Aetheris UI local-only unless the product direction changes explicitly.",
     "Do not add telemetry, analytics, cloud sync, remote code, automatic message sending, or account/session manipulation."
   ],
@@ -169,5 +185,31 @@
     "Browser extension policy requirements can change.",
     "Private local Obsidian state must remain untracked."
   ],
-  "lastReviewed": "2026-07-09"
+  "lastReviewed": "2026-10-07",
+  "toolingAreas": [
+    ".agent/",
+    "skills/",
+    ".agents/skills/",
+    ".codex/skills/",
+    ".claude/skills/"
+  ],
+  "agentToolkit": {
+    "projectId": "github:jikovec/Aetheris-UI",
+    "canonicalSkills": "skills/",
+    "projectSkills": "skills/project/",
+    "codexDiscovery": ".agents/skills/",
+    "codexCompatibility": ".codex/skills/",
+    "claudeDiscovery": ".claude/skills/",
+    "mindSeedEnabled": false,
+    "contracts": [
+      "core",
+      "authorization",
+      "verification",
+      "git-github",
+      "deployment",
+      "handoff",
+      "memory",
+      "scopes"
+    ]
+  }
 }

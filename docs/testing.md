@@ -1,63 +1,27 @@
 # Testing
 
-Last validated: 2026-07-09
+Last validated: 2026-10-07
 
-Tags: #repo/testing
+## Toolkit checks
 
-## Current Test Status
+Run the [declared validator](commands.md) after toolkit/orientation edits. It parses YAML
+and JSON, checks baseline files and identity shape, matches frontmatter and canonical
+adapters, resolves local Markdown links, checks index paths and rejects conflict markers
+or text hygiene errors. It is read-only and does not verify live remotes or model behavior.
+Exercise negative cases in an isolated copy: missing canonical skill, adapter drift,
+invalid metadata and a broken reference must fail. Missing PyYAML must be reported as
+unavailable, not a successful check.
 
-No automated tests are present.
+Review [routing cases](../.agent/evals/skill-routing.md) for neighboring workflow boundaries,
+authorization and deployment semantics. Verify native provider discovery where the actual
+CLI environment permits. Report static validation, semantic routing and native discovery
+independently. Do not claim a model inference test when only discovery was inspected.
 
-The checkout currently has no:
+## Application checks
 
-- package manifest
-- test runner config
-- source files
-- test files
-- browser fixture files
-- CI workflow
-
-Therefore, there is no runnable project test suite at this time.
-
-## Current Validation Scope
-
-For documentation-memory work, validate by checking:
-
-```powershell
-git status --short --branch
-git ls-files
-Get-ChildItem -Force
-Get-ChildItem -Recurse -File docs, reports, handoffs, DOCUMENTATION
-```
-
-Then compare memory docs against actual files present in the checkout.
-
-For documentation/indexing changes, also validate:
-
-```powershell
-Get-Content -Raw docs\agent-index.json | ConvertFrom-Json
-git diff --check
-```
-
-## Future Testing Direction
-
-The research report recommends layered testing for the eventual extension:
-
-- linting
-- typechecking
-- unit tests
-- fixture-based DOM contract tests
-- build checks
-- manual smoke checks on `chatgpt.com`
-
-The report also recommends not making authenticated live ChatGPT automation a required CI gate.
-
-When a package manifest is added, update this file with the exact scripts from `package.json` and the expected validation order.
-
-## Unknowns
-
-- Test runner is not implemented.
-- Browser automation strategy is not implemented.
-- DOM fixtures are not present.
-- Manual smoke checklist is not present.
-- CI validation is not present.
+No application tests, runner, browser fixtures, package manifest or CI workflow exists.
+The toolkit validator does not prove extension privacy behavior or browser functionality.
+Future product testing should cover lint/typecheck, pure logic, DOM contract fixtures,
+builds and manual cross-browser smoke checks. Authenticated live ChatGPT automation is
+not a required CI gate in the planning direction. Adopt exact commands from manifests
+when implementation exists and update this document with them.

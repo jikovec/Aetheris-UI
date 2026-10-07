@@ -11,7 +11,7 @@ No runnable extension is implemented in this checkout yet. The repository curren
 - No `package.json` is present.
 - No extension manifest is present.
 - No `entrypoints/`, `src/`, or `tests/` directories are present.
-- No build, test, lint, package, CI, deploy, or release command is declared.
+- No application build, test, lint, package, CI, deploy, or release command is declared.
 - Existing WXT, TypeScript, npm, Node 24 LTS, and MV3 references are planning recommendations until source files are created.
 
 ## Documentation
@@ -47,3 +47,10 @@ There is currently no application setup command. Do not run `npm`, build, test, 
 
 Safe repository inspection commands are documented in [docs/commands.md](docs/commands.md).
 
+
+## Repository agent workflows
+
+Use the [portable toolkit](.agent/README.md) for build, investigate, research, verify,
+review, fix, release, deploy, publish, push and pull workflows. Codex and Claude load
+thin adapters to the same canonical skills. [Toolkit checks](docs/commands.md) validate
+the agent infrastructure; the browser extension remains unimplemented.

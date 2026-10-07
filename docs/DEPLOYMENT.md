@@ -48,3 +48,11 @@ After source and scripts exist, update this file with:
 - manual smoke checklist links
 - browser-store readiness notes
 
+
+## Agent release and deployment routing
+
+The [deployment contract](../.agent/contracts/deployment.md) distinguishes release,
+normal deploy and explicitly requested force publication. These workflows discover real
+mechanics; their presence does not create artifacts or a runnable deployment path.
+Externally enforced protections cannot be bypassed. Ordinary source delivery follows
+[authorization](../.agent/contracts/authorization.md) and is not live acceptance.

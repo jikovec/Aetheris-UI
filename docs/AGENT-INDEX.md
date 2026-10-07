@@ -1,6 +1,6 @@
 # Future-Agent Index
 
-Last reviewed: 2026-07-09
+Last reviewed: 2026-10-07
 
 Tags: #agent/orientation #repo/index #aetheris/local-only
 
@@ -19,7 +19,7 @@ This file is the human-readable start workflow for future agents working in this
 
 ## What Can Be Inferred Quickly
 
-- The repo is currently documentation/planning-only.
+- The repo has product planning/documentation and agent tooling; the application is not implemented.
 - Aetheris UI is planned as a local-only ChatGPT UI browser extension.
 - The recommended stack is WXT, TypeScript, npm, Node 24 LTS, and MV3, but it is not implemented.
 - The privacy boundary forbids telemetry, cloud sync, remote code, automatic message sending, and account/session manipulation.
@@ -51,7 +51,14 @@ After every meaningful repo change, update the relevant docs:
 
 - Preserve runtime/product behavior unless the user asks for implementation work.
 - Do not invent commands when no manifest declares them.
-- Do not commit, push, deploy, release, or publish unless explicitly asked.
+- Follow the owner-adopted authorization contract for ordinary repository delivery; release, deploy and publish need applicable effect-specific authority.
 - Do not track `.obsidian/` or private local workspace state.
 - Do not add real prompts, private workflow notes, keys, tokens, credentials, private URLs, or account IDs.
 
+
+## Repository agent toolkit
+
+Use the [toolkit index](../.agent/README.md) for canonical workflows, contracts,
+provider discovery and validation. [Project metadata](../.agent/project.yaml)
+owns stable identity; [authorization](../.agent/contracts/authorization.md)
+owns standing delivery authority. The extension remains unimplemented.

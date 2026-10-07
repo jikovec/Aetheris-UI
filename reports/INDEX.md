@@ -8,6 +8,8 @@ Reports are durable evidence for validation, planning, and implementation passes
 
 ## Current Reports
 
+- [Agent toolkit bootstrap](agent-toolkit-bootstrap-2026-10-07.md) - Identity reconciliation, toolkit architecture, preservation and validation evidence.
+
 - [obsidian-agent-indexing-plan.md](obsidian-agent-indexing-plan.md) - Planning report for the documentation, Obsidian, repo-indexing, and future-agent orientation system.
 - [obsidian-agent-indexing-implementation-report-2026-07-09.md](obsidian-agent-indexing-implementation-report-2026-07-09.md) - Implementation report for the documentation/indexing system.
 - [obsidian-agent-indexing-verification-report-2026-07-09.md](obsidian-agent-indexing-verification-report-2026-07-09.md) - Post-implementation verification and hardening report for the documentation/indexing system.

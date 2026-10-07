@@ -1,92 +1,41 @@
 # Current State
 
-Last validated: 2026-07-09
+Last validated: 2026-10-07
 
-## Repository Status
+## Implemented repository infrastructure
 
-At the start of the 2026-07-07 validation pass, the checkout contained:
+The repository contains product planning, documentation indexes and a portable agent
+toolkit. [Project metadata](../.agent/project.yaml) binds Aetheris UI to
+`jikovec/Aetheris-UI`; its repository-derived identity is stable across checkout paths.
+Organization is unbound for this personal-account repository. Mind-Seed is disabled.
 
-- `.git/`
-- `DOCUMENTATION/deep-research-report.md`
+The [toolkit](../.agent/README.md) provides eight shared contracts, eleven canonical
+workflows, the existing Aetheris project-workflow vocabulary, Codex/Claude discovery
+adapters and a manually invoked structural validator. These are development tools;
+they do not implement browser-extension behavior.
 
-The Git branch was `main`, with no commits on the local branch and `origin/main` reported as gone.
+## Application state
 
-The 2026-07-07 validation pass added repo-root project memory docs and a validation report. It did not add application source code.
+No `package.json`, package lockfile, WXT config, extension manifest, `entrypoints/`,
+`src/`, application `tests/`, CI workflow, app build output or release artifact exists.
+There are no declared application build/test/lint/package/release commands.
+Use [commands](commands.md) and [testing](testing.md) for actual toolkit validation.
 
-The 2026-07-09 indexing pass added documentation, Obsidian, report, handoff, and future-agent orientation indexes. It did not add application source code.
+## Product direction
 
-## Implementation Status
+[Product research](../DOCUMENTATION/deep-research-report.md) recommends a local-only
+ChatGPT WebExtension using WXT, TypeScript, npm, Node 24 LTS and Manifest V3.
+These remain planning recommendations until current manifests adopt them. License,
+browser permissions, storage schemas, test runner and release mechanics are not
+implemented. Preserve [privacy/security boundaries](security-model.md).
 
-Aetheris UI is currently a planning/documentation repository, not a runnable browser extension.
+## Evidence and history
 
-Not present in the checkout:
+Current source/configuration/tests establish technical truth, current GitHub state
+establishes work status, and accepted decisions establish policy. Planning research,
+historical reports and memory cannot override current authoritative evidence.
 
-- `package.json`
-- `package-lock.json`
-- WXT config
-- extension manifest
-- `entrypoints/`
-- `src/`
-- `tests/`
-- `.github/workflows/`
-- release artifacts
-- generated builds
-
-Because no package or extension manifest exists, there are no repo-declared app commands, test commands, browser targets, permissions, or build outputs to validate.
-
-## Documentation And Indexing Status
-
-Present in the checkout:
-
-- `README.md`
-- `00_Index.md`
-- `AGENTS.md`
-- `docs/INDEX.md`
-- `docs/AGENT-INDEX.md`
-- `docs/SOURCE-MAP.md`
-- `docs/CONNECTIONS.md`
-- `docs/OBSIDIAN.md`
-- `docs/agent-index.json`
-- `reports/INDEX.md`
-- `handoffs/INDEX.md`
-
-The local `.obsidian/` folder is intentionally ignored through `.gitignore`.
-
-## Product Direction
-
-The existing research report recommends Aetheris UI as a local-only, cross-browser WebExtension for `https://chatgpt.com/*`.
-
-Recommended planning direction from the report:
-
-- WXT
-- TypeScript
-- npm
-- Node 24 LTS
-- Manifest V3 for Chrome/Chromium and Firefox
-- local settings with extension storage
-- tokenized dark UI theme system
-- popup and options page
-- content script scoped to ChatGPT
-- no telemetry, cloud sync, remote code, automatic message sending, or session manipulation
-
-These are planning recommendations until source files and manifests are created.
-
-## Source Of Truth
-
-Use this order when future facts conflict:
-
-1. Current source code, manifests, lockfiles, configs, tests, and CI files.
-2. Current documentation in `docs/`, root docs, and machine-readable repo indexes.
-3. `DOCUMENTATION/deep-research-report.md`.
-4. Reports and handoffs.
-5. Older chat or memory summaries.
-
-## Unknowns
-
-- Exact implementation stack is not confirmed by source files.
-- Exact package scripts are unknown.
-- Exact browser permissions are unknown.
-- Exact license is unknown because no `LICENSE` file is present.
-- Test strategy is not implemented.
-- CI strategy is not implemented.
-- Release packaging is not implemented.
+The July 2026 documentation passes are retained as dated historical reports.
+The [October toolkit report](../reports/agent-toolkit-bootstrap-2026-10-07.md) records
+reconciliation with the pre-existing local orientation bundle and the separate open
+baseline PR. Neither historical reports nor this page substitute for current Git state.

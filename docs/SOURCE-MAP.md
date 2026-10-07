@@ -1,6 +1,6 @@
 # Source Map
 
-Last reviewed: 2026-07-09
+Last reviewed: 2026-10-07
 
 Tags: #repo/source-map #agent/orientation #aetheris/browser-extension
 
@@ -59,3 +59,16 @@ No test areas exist yet. Future test mapping should include:
 
 Do not mark a planned source area as implemented until the corresponding file or directory exists in the checkout.
 
+
+## Agent toolkit connections
+
+- [Toolkit index](../.agent/README.md) connects stable metadata, contracts and workflows.
+- [Canonical skills](../skills/) own reasoning; [Codex adapters](../.agents/skills/) and
+  [Claude adapters](../.claude/skills/) point there. `.codex/skills/` provides compatibility.
+- [Project workflow](../skills/project/aetheris-ui-workflow/SKILL.md) routes existing requests.
+- [Shared documentation procedure](../.agent/workflows/documentation.md) maintains the indexes.
+- [Validator](../.agent/hooks/toolkit/validate.py) checks toolkit structure;
+  [routing cases](../.agent/evals/skill-routing.md) exercise semantics.
+- [Bootstrap report](../reports/agent-toolkit-bootstrap-2026-10-07.md) records reconciliation.
+
+These are repository tools and documentation; application source/test areas remain planned.
