@@ -1,10 +1,10 @@
 # Handoffs Index
 
-Last reviewed: 2026-07-09
+Last reviewed: 2026-10-07
 
 Tags: #agent/handoff #repo/index #obsidian/graph
 
-No active handoffs are recorded yet.
+- [Toolkit integration follow-up](2026-10-07-agent-toolkit-integration.md) - Preserve local work and reconcile the separate baseline PR before future integration.
 
 ## Handoff Rules
 

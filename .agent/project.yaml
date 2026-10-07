@@ -1,0 +1,36 @@
+schema_version: 1
+project:
+  id: github:jikovec/Aetheris-UI
+  name: Aetheris UI
+  type: documentation
+repository:
+  host: github
+  owner: jikovec
+  name: Aetheris-UI
+  default_branch: main
+  canonical_remote: origin
+organization:
+  id: null
+  name: null
+ownership:
+  class: user-owned
+agent:
+  instructions: AGENTS.md
+  canonical_skills: skills/
+  project_specific_skills: skills/project/
+environment:
+  primary_runtime: null
+  package_manager: null
+  required_tools:
+    - Git
+    - Python 3.9+ with PyYAML (toolkit validation only)
+  source_files:
+    - docs/commands.md
+    - .agent/hooks/toolkit/validate.py
+integrations:
+  directory: .agent/integrations/
+workflows:
+  directory: .agent/workflows/
+mind_seed:
+  enabled: false
+  binding: null

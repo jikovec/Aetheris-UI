@@ -1,6 +1,6 @@
 # Aetheris UI Project Memory Index
 
-Last validated: 2026-07-09
+Last validated: 2026-10-07
 
 Tags: #repo/index #agent/orientation #obsidian/graph #aetheris/browser-extension
 
@@ -43,6 +43,13 @@ Tags: #repo/index #agent/orientation #obsidian/graph #aetheris/browser-extension
 
 ## Current Repo State Summary
 
-This repository is not yet an implemented application. The current checkout has documentation and project memory, but no source scaffold, package manifest, extension manifest, automated tests, CI workflow, or release artifacts.
+This repository is not yet an implemented application. The current checkout has documentation, agent workflows and toolkit validation, but no application scaffold, package/extension manifest, application tests, CI workflow or release artifacts.
 
 Future Codex work should use this index first, then verify current files before relying on any claim.
+
+## Repository agent toolkit
+
+Use the [toolkit index](.agent/README.md) for canonical workflows, contracts,
+provider discovery and validation. [Project metadata](.agent/project.yaml)
+owns stable identity; [authorization](.agent/contracts/authorization.md)
+owns standing delivery authority. The extension remains unimplemented.

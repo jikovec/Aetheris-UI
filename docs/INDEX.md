@@ -1,6 +1,6 @@
 # Documentation Index
 
-Last reviewed: 2026-07-09
+Last reviewed: 2026-10-07
 
 Tags: #repo/index #obsidian/graph #agent/orientation #aetheris/browser-extension
 
@@ -56,3 +56,10 @@ These areas intentionally have no source-backed docs yet:
 - browser-store submission process
 
 When those files are added, update this index and the related docs in the same change.
+
+## Repository agent toolkit
+
+Use the [toolkit index](../.agent/README.md) for canonical workflows, contracts,
+provider discovery and validation. [Project metadata](../.agent/project.yaml)
+owns stable identity; [authorization](../.agent/contracts/authorization.md)
+owns standing delivery authority. The extension remains unimplemented.
