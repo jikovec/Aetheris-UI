@@ -18,6 +18,8 @@ BASELINE = {'build', 'investigate', 'research', 'verify', 'review', 'fix',
 CONTRACTS = {'core', 'authorization', 'verification', 'git-github',
              'deployment', 'handoff', 'memory', 'scopes'}
 PROVIDERS = ('.agents/skills', '.claude/skills')
+# Claude Code loads these adapters only on an explicit /name invocation.
+CLAUDE_USER_ONLY = {'release', 'deploy', 'publish'}
 
 
 class UniqueLoader(yaml.SafeLoader):
@@ -50,7 +52,7 @@ def main():
     def load_yaml(path):
         return yaml.load(path.read_text(encoding='utf-8'), Loader=UniqueLoader)
 
-    def frontmatter(path):
+    def frontmatter(path, provider_fields=()):
         text = path.read_text(encoding='utf-8')
         match = re.match(r'\A---\n(.*?)\n---\n', text, re.S)
         if not match:
@@ -58,7 +60,8 @@ def main():
         data = yaml.load(match.group(1), Loader=UniqueLoader)
         if not isinstance(data, dict):
             raise ValueError(f'{path.relative_to(root)}: frontmatter is not a mapping')
-        require(set(data) == {'name', 'description'}, f'{path.relative_to(root)}: unexpected frontmatter fields')
+        require(set(data) == {'name', 'description', *provider_fields},
+                f'{path.relative_to(root)}: unexpected frontmatter fields')
         require(data.get('name') == path.parent.name, f'{path.relative_to(root)}: name differs from directory')
         require(bool(re.fullmatch(r'[a-z0-9]+(?:-[a-z0-9]+)*', str(data.get('name', '')))),
                 f'{path.relative_to(root)}: invalid skill name')
@@ -112,7 +115,11 @@ def main():
         files = sorted((root / provider).glob('*/SKILL.md'))
         require({p.parent.name for p in files} == canonical.keys(), f'{provider}: adapter coverage differs')
         for path in files:
-            data, body = frontmatter(path)
+            gated = provider == '.claude/skills' and path.parent.name in CLAUDE_USER_ONLY
+            data, body = frontmatter(path, ('disable-model-invocation',) if gated else ())
+            if gated:
+                require(data.pop('disable-model-invocation', None) is True,
+                        f'{path.relative_to(root)}: Claude adapter must set disable-model-invocation: true')
             target, expected = canonical[path.parent.name]
             require(data == expected, f'{path.relative_to(root)}: frontmatter drift')
             relative = target.relative_to(root).as_posix()

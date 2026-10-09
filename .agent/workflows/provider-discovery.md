@@ -2,7 +2,8 @@
 
 Canonical skills live under `skills/`, including the established project entrypoint
 under `skills/project/aetheris-ui-workflow/`. Each native adapter contains only matching
-frontmatter and a relative link to that canonical file. Regular files avoid Windows
+frontmatter and a relative link to that canonical file; the one exception is the Claude
+invocation gate described below. Regular files avoid Windows
 symlink privileges; the validator catches adapter drift. Add or change each provider
 adapter atomically with its canonical skill.
 
@@ -27,6 +28,11 @@ model turn. Static adapter validation alone is not native discovery proof.
 `.claude/skills/<name>/SKILL.md`; invoke `/build <task>` or the relevant name.
 [CLAUDE.md imports](https://code.claude.com/docs/en/memory) support the literal
 `@AGENTS.md` line, keeping repository policy canonical.
+
+The Claude adapters for `release`, `deploy` and `publish` also set
+`disable-model-invocation: true`, so Claude Code loads them only on an explicit
+`/release`, `/deploy` or `/publish`. Canonical skills and Codex adapters keep the
+portable name/description metadata, and the validator enforces both forms.
 
 The installed CLI's stream-json initialization control response can enumerate commands
 without a user/model prompt. Isolate the probe: disable hooks, MCP and tools, use only
