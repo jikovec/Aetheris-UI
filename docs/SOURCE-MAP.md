@@ -1,6 +1,6 @@
 # Source Map
 
-Last reviewed: 2026-10-07
+Last reviewed: 2026-10-15
 
 Tags: #repo/source-map #agent/orientation #aetheris/browser-extension
 
@@ -30,6 +30,17 @@ Absent as of this review:
 - `DOCUMENTATION/deep-research-report.md` - product and technical research.
 - `reports/` - validation, planning, and implementation reports.
 - `handoffs/` - future handoff routing.
+
+## Portable orientation configuration
+
+- [Codex environment](../.codex/environments/environment.toml) - manual Linux Git-state
+  and whitespace actions; empty setup and cleanup scripts.
+- [Project skill metadata](../.agents/skills/aetheris-ui-workflow/agents/openai.yaml) -
+  Codex display and invocation metadata for the existing thin skill adapter.
+- [Orientation handoff](../handoffs/2026-09-12-local-project-orientation.md) - dated
+  orientation evidence and reconciliation with the adopted toolkit.
+
+These are tooling/documentation assets. Local `.obsidian/` state remains ignored.
 
 ## Planned Source Areas
 

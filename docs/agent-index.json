@@ -2,7 +2,7 @@
   "repoName": "Aetheris UI",
   "repoPurpose": "Planning and documentation repository for a future local-only browser extension that enhances the ChatGPT web UI at https://chatgpt.com/*.",
   "status": {
-    "lastReviewed": "2026-10-07",
+    "lastReviewed": "2026-10-15",
     "implementationState": "documentation-and-planning-only",
     "hasRunnableApp": false,
     "hasPackageManifest": false,
@@ -43,7 +43,10 @@
     "toolkitValidator": ".agent/hooks/toolkit/validate.py",
     "toolkitRouting": ".agent/evals/skill-routing.md",
     "toolkitReport": "reports/agent-toolkit-bootstrap-2026-10-07.md",
-    "toolkitHandoff": "handoffs/2026-10-07-agent-toolkit-integration.md"
+    "toolkitHandoff": "handoffs/2026-10-07-agent-toolkit-integration.md",
+    "codexEnvironment": ".codex/environments/environment.toml",
+    "projectSkillMetadata": ".agents/skills/aetheris-ui-workflow/agents/openai.yaml",
+    "orientationHandoff": "handoffs/2026-09-12-local-project-orientation.md"
   },
   "docsEntryPoints": [
     "00_Index.md",
@@ -96,6 +99,10 @@
     ],
     "toolkitValidation": [
       "python3 .agent/hooks/toolkit/validate.py"
+    ],
+    "localManualActions": [
+      "git status --short --branch",
+      "git diff --check"
     ]
   },
   "reports": {
@@ -185,13 +192,14 @@
     "Browser extension policy requirements can change.",
     "Private local Obsidian state must remain untracked."
   ],
-  "lastReviewed": "2026-10-07",
+  "lastReviewed": "2026-10-15",
   "toolingAreas": [
     ".agent/",
     "skills/",
     ".agents/skills/",
     ".codex/skills/",
-    ".claude/skills/"
+    ".claude/skills/",
+    ".codex/environments/"
   ],
   "agentToolkit": {
     "projectId": "github:jikovec/Aetheris-UI",
@@ -211,5 +219,12 @@
       "memory",
       "scopes"
     ]
+  },
+  "localWorkflow": {
+    "environment": ".codex/environments/environment.toml",
+    "skillMetadata": ".agents/skills/aetheris-ui-workflow/agents/openai.yaml",
+    "automaticSetup": "empty",
+    "automaticCleanup": "empty",
+    "manualActionsPlatform": "linux"
   }
 }

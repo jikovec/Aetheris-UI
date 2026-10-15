@@ -1,0 +1,4 @@
+interface:
+  display_name: "Aetheris UI workflow"
+  short_description: "Complete scoped project work and verification"
+  default_prompt: "Use $aetheris-ui-workflow to finish the current scoped task and verify the result."

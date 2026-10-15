@@ -1,6 +1,6 @@
 # Connection Map
 
-Last reviewed: 2026-10-07
+Last reviewed: 2026-10-15
 
 Tags: #repo/connection-map #agent/orientation #obsidian/graph
 
@@ -15,6 +15,12 @@ This file explains how docs, source, tests, reports, handoffs, decisions, and th
 - [decisions.md](decisions.md) records planning decisions and their status.
 - [commands.md](commands.md) records application absence and actual toolkit validation commands.
 - [testing.md](testing.md) separates toolkit validation from absent application tests.
+- [Codex environment](../.codex/environments/environment.toml) provides the manual Git
+  actions documented in [commands.md](commands.md).
+- [Project skill metadata](../.agents/skills/aetheris-ui-workflow/agents/openai.yaml)
+  describes the existing [workflow adapter](../.agents/skills/aetheris-ui-workflow/SKILL.md).
+- [Orientation handoff](../handoffs/2026-09-12-local-project-orientation.md) links the
+  historical local bundle to the adopted toolkit and remaining configuration.
 - [security-model.md](security-model.md) records current and intended security boundaries.
 - [agent-index.json](agent-index.json) mirrors the durable orientation facts for tools and agents.
 - [../reports/INDEX.md](../reports/INDEX.md) lists reports.
