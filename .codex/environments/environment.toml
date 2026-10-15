@@ -1,0 +1,21 @@
+# Local project actions. Automatic setup and cleanup have no side effects.
+version = 1
+name = "Aetheris UI"
+
+[setup]
+script = ""
+
+[cleanup]
+script = ""
+
+[[actions]]
+name = "Inspect current Git state"
+icon = "tool"
+command = "git status --short --branch"
+platform = "linux"
+
+[[actions]]
+name = "Check patch whitespace"
+icon = "tool"
+command = "git diff --check"
+platform = "linux"

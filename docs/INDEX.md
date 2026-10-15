@@ -1,6 +1,6 @@
 # Documentation Index
 
-Last reviewed: 2026-10-07
+Last reviewed: 2026-10-15
 
 Tags: #repo/index #obsidian/graph #agent/orientation #aetheris/browser-extension
 
@@ -36,6 +36,8 @@ This is the canonical documentation hub for Aetheris UI. Current repository file
 
 - [Reports index](../reports/INDEX.md)
 - [Handoffs index](../handoffs/INDEX.md)
+- [September orientation handoff](../handoffs/2026-09-12-local-project-orientation.md) -
+  dated orientation evidence and reconciliation of portable workflow assets.
 - [Obsidian and agent indexing plan](../reports/obsidian-agent-indexing-plan.md)
 - [Obsidian and agent indexing implementation report](../reports/obsidian-agent-indexing-implementation-report-2026-07-09.md)
 - [Obsidian and agent indexing verification report](../reports/obsidian-agent-indexing-verification-report-2026-07-09.md)

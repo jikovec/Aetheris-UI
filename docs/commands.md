@@ -1,6 +1,6 @@
 # Commands
 
-Last validated: 2026-10-07
+Last validated: 2026-10-15
 
 ## Application commands
 
@@ -33,6 +33,13 @@ git ls-files
 
 Diff checks cover tracked/staged changes; the toolkit validator also checks newly added
 files. Review the final explicit path list before staging or delivery.
+
+## Manual Codex actions
+
+The tracked [environment configuration](../.codex/environments/environment.toml)
+provides two manual Linux actions: `git status --short --branch` and `git diff --check`.
+Setup and cleanup scripts are empty. The actions inspect Git state and tracked patch
+whitespace; they do not run the toolkit validator or an application command.
 
 ## Discovery checks
 

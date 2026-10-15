@@ -1,6 +1,6 @@
 # Future-Agent Index
 
-Last reviewed: 2026-10-07
+Last reviewed: 2026-10-15
 
 Tags: #agent/orientation #repo/index #aetheris/local-only
 
@@ -24,6 +24,9 @@ This file is the human-readable start workflow for future agents working in this
 - The recommended stack is WXT, TypeScript, npm, Node 24 LTS, and MV3, but it is not implemented.
 - The privacy boundary forbids telemetry, cloud sync, remote code, automatic message sending, and account/session manipulation.
 - The repo has documentation, reports, and indexes, but no runnable app scaffold.
+- The [Codex environment](../.codex/environments/environment.toml) exposes manual Linux
+  Git-state and whitespace actions with empty setup and cleanup scripts; see
+  [commands](commands.md#manual-codex-actions).
 
 ## What Cannot Be Inferred Yet
 

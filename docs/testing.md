@@ -1,6 +1,6 @@
 # Testing
 
-Last validated: 2026-10-07
+Last validated: 2026-10-15
 
 ## Toolkit checks
 
@@ -16,6 +16,15 @@ Review [routing cases](../.agent/evals/skill-routing.md) for neighboring workflo
 authorization and deployment semantics. Verify native provider discovery where the actual
 CLI environment permits. Report static validation, semantic routing and native discovery
 independently. Do not claim a model inference test when only discovery was inspected.
+
+## Orientation configuration checks
+
+When changing the [Codex environment](../.codex/environments/environment.toml), parse
+its TOML and review the action commands and platform fields. Check that setup and
+cleanup remain empty unless their effects are explicitly part of the task.
+Parse [project skill metadata](../.agents/skills/aetheris-ui-workflow/agents/openai.yaml)
+as YAML and compare its invocation name with the existing skill adapter. These static
+checks do not prove native UI action execution or provider discovery.
 
 ## Application checks
 

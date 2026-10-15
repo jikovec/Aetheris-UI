@@ -1,6 +1,6 @@
 # Current State
 
-Last validated: 2026-10-07
+Last validated: 2026-10-15
 
 ## Implemented repository infrastructure
 
@@ -13,6 +13,13 @@ The [toolkit](../.agent/README.md) provides eight shared contracts, eleven canon
 workflows, the existing Aetheris project-workflow vocabulary, Codex/Claude discovery
 adapters and a manually invoked structural validator. These are development tools;
 they do not implement browser-extension behavior.
+
+The [Codex environment](../.codex/environments/environment.toml) supplies two manual
+Linux Git inspection actions with empty setup and cleanup scripts. The existing project
+skill has [Codex display metadata](../.agents/skills/aetheris-ui-workflow/agents/openai.yaml).
+The [September orientation handoff](../handoffs/2026-09-12-local-project-orientation.md)
+records how those remaining assets fit the adopted toolkit. Machine-local paths,
+connector snapshots and superseded policy copies are not portable configuration.
 
 ## Application state
 
